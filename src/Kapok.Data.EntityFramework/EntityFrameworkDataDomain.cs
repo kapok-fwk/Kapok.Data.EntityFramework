@@ -12,7 +12,7 @@ public sealed class EntityFrameworkDataDomain : DataDomain
 
     public override IDataDomainScope CreateScope()
     {
-        var scope = new EntityFrameworkDataDomainScope(this);
+        var scope = new EntityFrameworkDataDomainScope(this, ServiceProvider);
         return scope;
     }
 
@@ -29,7 +29,7 @@ public sealed class EntityFrameworkDataDomain : DataDomain
         if (constructorInfo == null)
             throw new NotSupportedException("The DbContext must have a public constructor with the connection string as its only parameter.");
 
-        var newDbContext = (DbContext)constructorInfo.Invoke(new[]
+        var newDbContext = (DbContext)constructorInfo.Invoke(new object?[]
         {
             ConnectionString
         });

@@ -6,7 +6,7 @@ public class EntityFrameworkDataDomainScope : DataDomainScope
 {
     internal readonly DbContext DbContext;
 
-    public EntityFrameworkDataDomainScope(IDataDomain dataDomain) : base(dataDomain)
+    public EntityFrameworkDataDomainScope(IDataDomain dataDomain, IServiceProvider serviceProvider) : base(dataDomain, serviceProvider)
     {
         if (!(dataDomain is EntityFrameworkDataDomain efDataDomain))
             throw new ArgumentException(
@@ -34,12 +34,5 @@ public class EntityFrameworkDataDomainScope : DataDomainScope
     public override async Task SaveAsync(CancellationToken cancellationToken = default)
     {
         await DbContext.SaveChangesAsync(cancellationToken);
-    }
-
-    protected override IRepository<T> InitializeRepository<T>()
-    {
-        CheckIsDisposed();
-        
-        return new EntityFrameworkRepository<T>(this);
     }
 }
