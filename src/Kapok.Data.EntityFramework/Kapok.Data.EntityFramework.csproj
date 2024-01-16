@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <PackageId>Kapok.Data.EntityFramework</PackageId>
+    <Version>0.1.9</Version>
+    <Authors>Kapok Framework Community</Authors>
+    <RepositoryUrl>https://github.com/kapok-fwk/kapok-fwk</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyOriginatorKeyFile>..\kapok-fwk.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>True</SignAssembly>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Kapok.Core" Version="0.1.9.1" />
+  </ItemGroup>
+
+</Project>
