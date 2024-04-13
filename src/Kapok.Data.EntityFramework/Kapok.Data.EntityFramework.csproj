@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
-    <PackageReference Include="Kapok.Core" Version="0.1.21" />
+    <PackageReference Include="Kapok.Core" Version="0.2.0" />
   </ItemGroup>
 
 </Project>
